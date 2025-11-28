@@ -11,7 +11,7 @@ export default function InputCard() {
   return (
     <>
       <div className="flex flex-col font-mono w-full">
-        <Input size="lg" placeholder="0xffffe" />
+        <Input size="lg" placeholder="0xffffe" label="Decimal" labelPlacement="outside" />
       </div>
     </>
   );
