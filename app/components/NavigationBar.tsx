@@ -10,7 +10,7 @@ import {
 
 export default function NavigationBar() {
   return (
-    <Navbar isBordered>
+    <Navbar isBordered className="font-mono">
       <NavbarBrand>
         <p>BaseCalc</p>
       </NavbarBrand>
