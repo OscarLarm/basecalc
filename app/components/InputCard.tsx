@@ -41,10 +41,12 @@ export default function InputCard({
           {title}
         </p>
         <div className="flex items-center w-full">
-          {prefix && (
-            <p className="text-neutral-600 text-md font-mono">{prefix}</p>
-          )}
           <Input
+            startContent={
+              prefix && (
+                <p className="text-neutral-600 text-md font-mono">{prefix}</p>
+              )
+            }
             type={type}
             classNames={{
               inputWrapper: [
