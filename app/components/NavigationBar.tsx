@@ -11,10 +11,6 @@ export default function NavigationBar() {
       <NavbarBrand>
         <p>BaseCalc</p>
       </NavbarBrand>
-      
-      <NavbarContent className="flex" justify="center" >
-
-      </NavbarContent>
     </Navbar>
   );
 }
