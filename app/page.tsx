@@ -45,9 +45,9 @@ export default function Home() {
   return (
     <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-center pt-32 px-16 bg-neutral-950">
       <div className="flex-1 flex-col w-full flex items-stretch justify-start gap-4">
-        <InputCard title="decimal" prefix="" placeholder="0" value={decimalDisplay} onChange={handleDecimalChange} />
-        <InputCard title="hexadecimal" prefix="0x" placeholder="0" value={hexDisplay} onChange={handleHexChange} />
-        <InputCard title="binary" prefix="0b" placeholder="0" value={binaryDisplay} onChange={handleBinaryChange} />
+        <InputCard title="decimal" prefix="" placeholder="0" value={decimalDisplay} base="10" onChange={handleDecimalChange} />
+        <InputCard title="hexadecimal" prefix="0x" placeholder="0" value={hexDisplay} base="16" onChange={handleHexChange} />
+        <InputCard title="binary" prefix="0b" placeholder="0" value={binaryDisplay} base="2" onChange={handleBinaryChange} />
       </div>
     </main>
   );

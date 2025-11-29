@@ -1,4 +1,4 @@
-import { Card, Input } from "@heroui/react";
+import { Card, Input, Chip, CardBody, CardFooter } from "@heroui/react";
 import React, { useRef, useState } from "react";
 
 interface InputCardProps {
@@ -7,6 +7,7 @@ interface InputCardProps {
   placeholder?: string;
   value: string;
   onChange: (value: string) => void;
+  base: string;
   type?: string;
 }
 
@@ -16,6 +17,7 @@ export default function InputCard({
   value,
   onChange,
   placeholder,
+  base,
   type = "text",
 }: InputCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -32,9 +34,10 @@ export default function InputCard({
   return (
     <div className="w-full" ref={cardRef} onClick={handleCardClick}>
       <Card
-        className={`w-full flex flex-col border rounded-xl p-4 gap-0.5 justify-baseline items-start hover:border-neutral-700 transition-all duration-200 cursor-text ${isFocused ? "bg-neutral-900 border-neutral-700" : "bg-neutral-950 border-neutral-800"}`}
+        className={`w-full flex flex-row border rounded-xl p-4 gap-0.5 justify-baseline items-start hover:border-neutral-700 transition-all duration-200 cursor-text ${isFocused ? "bg-neutral-900 border-neutral-700" : "bg-neutral-950 border-neutral-800"}`}
       >
-        <p className={`px-1 text-xs font-bold uppercase tracking-wider font-mono ${isFocused ? "text-neutral-200 " : "text-neutral-500"}`}>
+        <CardBody className="flex-1">
+        <p className={` text-xs font-bold uppercase tracking-wider font-mono ${isFocused ? "text-neutral-300 " : "text-neutral-500"}`}>
           {title}
         </p>
         <div className="flex items-center w-full">
@@ -49,7 +52,7 @@ export default function InputCard({
                 "shadow-none",
                 "data-[hover=true]:bg-transparent",
                 "group-data-[focus=true]:bg-transparent",
-                "px-1",
+                "p-0",
               ],
               input: "text-lg font-mono ",
             }}
@@ -64,6 +67,10 @@ export default function InputCard({
             value={value}
             size="lg"
           />
+        </div>
+        </CardBody>
+        <div className="w-16 mr-2 flex justify-start text-center">
+          <Chip className={`font-mono min-w-18 border transition-all duration-200 ${isFocused ? "bg-neutral-900 border-neutral-700 text-neutral-400" : "bg-neutral-950 border-neutral-800 text-neutral-500"}`} size="sm" variant="bordered" radius="sm" >BASE {base}</Chip>
         </div>
       </Card>
     </div>
