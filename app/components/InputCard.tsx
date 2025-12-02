@@ -50,8 +50,11 @@ export default function InputCard({
                 "data-[hover=true]:bg-transparent",
                 "group-data-[focus=true]:bg-transparent",
                 "px-1",
+                "group-data-[focus=true]:ring-0",
+                "group-data-[focus=true]:ring-offset-0",
+                "group-data-[focus=true]:shadow-none",
               ],
-              input: "text-lg font-mono ",
+              input: "text-lg font-mono",
             }}
             className=""
             prefix="0x"
